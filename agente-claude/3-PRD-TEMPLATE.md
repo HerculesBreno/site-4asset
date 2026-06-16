@@ -1,122 +1,118 @@
-# PRD TEMPLATE
+# PRD TEMPLATE — vira corpo do PR
 
-> Adicione este arquivo em: **Project → Knowledge → Upload file**
-> O Claude usa este template ao final do fluxo do Dream Team antes de criar o PR.
+> Adicione em: **Project → Knowledge → Upload file**
+> Este template é usado pelo agente ao final do fluxo do Dream Team. O PRD completo é colado como **corpo do PR** no GitHub. Marketing **nunca** precisa abrir o GitHub para ver — o link do PR é enviado no chat só pra registro.
 
 ---
 
-# PRD — [TÍTULO CURTO DO PEDIDO]
+# PRD — [TÍTULO CURTO]
 
 ## 1. Identificação
-
-- **Solicitado por:** [nome ou email do marketeer]
-- **Data:** [data ISO YYYY-MM-DD]
-- **Canal:** Claude Project · site-4asset
-- **Tipo de pedido:** [copy · SEO · conversão · funil · tagging · atribuição · design · estratégia · outro]
+- **Solicitado por:** [nome do membro do marketing — coletado via elicitation]
+- **Data:** [data ISO]
+- **Canal:** Claude Project · Site 4Asset
+- **Tipo:** [copy · SEO · conversão · funil · tagging · atribuição · design · estratégia]
+- **Slash command usado:** `/dream-team` · `/edit-copy` · `/seo-review` · etc.
 
 ## 2. Pedido original
-
-> [Cole aqui a mensagem completa do usuário, sem editar]
+> [Mensagem original do usuário, sem editar]
 
 ## 3. Contexto identificado
-
-- **Página/seção afetada:** [ex: Hero · Pilares · Cards de produto]
-- **Arquivos:** `[ex: index.html (linhas 1234-1267)]`
-- **Versão atual no site:** https://herculesbreno.github.io/site-4asset/
+- **Página/seção afetada:** [ex: Hero · Pilares · Cards de produto · Footer]
+- **Arquivo(s):** `index.html` (linhas X-Y) · `privacidade.html` · etc.
+- **Versão pública atual:** https://herculesbreno.github.io/site-4asset/
 
 ## 4. Análise do Dream Team
 
-> Para cada especialista convocado, registre o parecer em primeira pessoa.
+> Para cada especialista convocado, registre o parecer em primeira pessoa, no estilo da persona.
 
-### [Nome do especialista 1] · [domínio]
-[Parecer de 2-4 parágrafos no estilo da persona, incluindo:
-- Diagnóstico do problema
+### [Nome] · [Domínio]
+[Parecer de 2-4 parágrafos:
+- Diagnóstico
 - Recomendação concreta
-- Hipótese mensurável (se aplicável)
-- Riscos identificados]
+- Hipótese mensurável (quando aplicável)
+- Riscos]
 
-### [Nome do especialista 2] · [domínio]
-[mesmo formato]
+[Repita para cada especialista convocado]
 
-[...continua para cada especialista convocado]
-
-## 5. Síntese consolidada
-
+## 5. Síntese
 ### Consensos
-- [Ponto onde todos concordam]
-- [...]
+- [Ponto de acordo entre os especialistas]
 
-### Tensões / Trade-offs
-- **[Especialista A] x [Especialista B]:** [resumo da discordância e o que está em jogo]
-- [...]
+### Tensões / trade-offs
+- **[Especialista A] x [Especialista B]:** [resumo da discordância]
 
 ### Recomendação final
-[Sua proposta como orquestrador, considerando o contexto da 4Asset — público B2B, posicionamento premium, métricas via RD Station + GA4. Deixe explícito o caminho escolhido entre as tensões.]
+[Sua proposta consolidada como orquestrador, considerando o contexto da 4Asset — B2B, decisor enterprise, RD Station + GA4.]
 
 ## 6. Implementação proposta
 
 ### Arquivos afetados
-- `[arquivo]` — [linhas] — [tipo de mudança]
+- `[arquivo]` — linhas [X-Y] — [tipo de mudança]
 
-### Antes
+### Antes (trecho atual)
 ```html
-[trecho atual do código, fiel ao repositório]
+[código atual fiel ao repositório]
 ```
 
-### Depois
+### Depois (trecho proposto)
 ```html
-[trecho proposto]
+[código proposto]
 ```
 
-### Alterações em CSS / JS
-- [Se houver, listar. Se não houver, escrever "Nenhuma."]
+### CSS / JS alterados
+[Liste ou "Nenhum"]
 
-### Impacto em outras páginas/seções
-- [Lista de impactos colaterais detectados ou "Nenhum"]
+### Impacto em outras seções
+[Liste ou "Nenhum"]
 
 ## 7. Métricas de validação
+- **North Star:** [ex: leads qualificados via RD]
+- **Métricas secundárias:** [ex: scroll, click CTA]
+- **Linha de base:** [valor ou "auditoria pendente"]
+- **Hipótese de impacto:** [ex: "+15% em CTR no CTA hero em 30 dias"]
+- **Janela de avaliação:** [ex: 30 dias]
+- **Tagueamento adicional?** [se sim, listar evento + schema]
 
-> Como vamos saber se a mudança funcionou?
+## 8. Auditorias externas necessárias
+> O Dream Team identificou validações que dependem de dados ao vivo.
 
-- **Métrica primária (North Star):** [ex: leads qualificados via RD Station]
-- **Métricas secundárias:** [ex: scroll depth na dobra X, click-through no CTA Y]
-- **Linha de base atual:** [valor atual ou "auditoria pendente"]
-- **Hipótese de impacto:** [ex: "esperamos +15% em clicks no CTA hero em 30 dias"]
-- **Janela de avaliação:** [ex: 30 dias após deploy]
-- **Tagueamento adicional necessário?** [se sim, listar evento + dataLayer schema]
+- [ ] [Ex: confirmar evento `cta_hero_click` no GTM]
+- [ ] [Ex: validar UTM no RD Station]
+- [ ] [Ex: pedir audit do share of search]
 
-## 8. Auditorias e dependências externas
-
-> O Dream Team identificou que algumas validações dependem de dados ao vivo. Listar aqui o que precisa ser auditado fora deste PR.
-
-- [ ] [Ex: confirmar com Julius que o evento `cta_hero_click` está disparando no GTM]
-- [ ] [Ex: validar com Mercer que o RD Station passa UTM `source=site_4asset` para o GA4]
-- [ ] [Ex: pedir SparkToro audit do share of search vs concorrentes (Rand)]
-
-## 9. Riscos identificados
-
-- **[Risco 1]:** [descrição + mitigação]
-- **[Risco 2]:** [descrição + mitigação]
+## 9. Riscos
+- **[Risco]:** [descrição + mitigação]
 
 ## 10. Aprovações
-
-- [ ] Aprovação do solicitante (marketing)
-- [ ] Aprovação do gestor (você, dono do site)
-- [ ] Aprovação do dev (apenas se mudança envolver CSS/JS/estrutura)
+- [ ] Solicitante (marketing)
+- [ ] Gestor (Hercules / Maurício)
+- [ ] Dev (apenas se mudança envolver CSS/JS/estrutura)
 
 ---
 
-## 11. PR Output
+## 🔧 Output do PR (gerado automaticamente pelo Claude via GitHub Connector)
 
-Quando o PRD for aprovado, o agente gera o PR com:
-
-- **Branch:** `dreamteam/[descricao-kebab-case]`
-  *(ou `marketing/[descricao]` se foi edição direta sem Dream Team)*
-- **Título:** `[dreamteam] [resumo de até 60 chars]`
-- **Corpo do PR:** todo este PRD colado, com a seção "PR Output" suprimida.
-- **Assinatura final do PR:**
+Após aprovação:
+- **Branch:** `dreamteam/[descricao-kebab-case]` ou `marketing/[descricao]`
+- **Título do PR:** `[dreamteam] [resumo até 60 chars]` ou `[marketing] [resumo]`
+- **Labels:** `marketing-request`, `dream-team` (se aplicável)
+- **Corpo do PR:** este PRD inteiro (seções 1-10), suprimindo a seção 🔧
+- **Assinatura final:**
   ```
+  ---
   Solicitado por: [nome]
   Analisado pelo Dream Team em: [data]
   Especialistas convocados: [lista]
+  Pedido via: Claude Project · /dream-team
   ```
+
+## 💬 Mensagem final para o marketing no chat (após PR criado)
+
+> ✅ **PR aberto e encaminhado para aprovação.**
+>
+> 🔗 [link do PR]
+> 👤 Aprovador notificado: [nome]
+> ⏱️ Você recebe o status final em até X horas.
+>
+> Quer fazer outro pedido?
