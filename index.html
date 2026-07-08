@@ -41,13 +41,10 @@
     }
 
     /* Fullpage estrito: cada dobra ocupa exatamente 1 tela */
-    .about-section,
     .segments-section,
     .pillars-section,
     .products-section,
-    .solution-cta,
-    .cases-section,
-    .final-cta {
+    .cases-section {
       height: 100vh;
       min-height: 100vh;
       overflow: hidden;
@@ -58,21 +55,24 @@
       padding-bottom: 0 !important;
     }
 
-    /* Sobre: conteúdo cola no topo (precisa pro marquee no rodapé) */
-    /* Segmentos: conteúdo no topo para os 6 cards aproveitarem espaço */
-    .about-section,
-    .segments-section {
-      justify-content: flex-start !important;
+    /* Sobre: altura automática, conteúdo cola no topo, marquee logo em seguida (sem vazio) */
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      padding-top: 58px !important;
+      padding-bottom: 0 !important;
     }
     /* Demais seções: conteúdo centralizado para visual balanceado */
 
-    /* CTAs: conteúdo compacto centralizado (evita botões esticados full-width) */
+    /* CTAs: faixas compactas (não ocupam a tela inteira), conteúdo centralizado */
     .solution-cta,
     .final-cta {
+      display: flex;
+      flex-direction: column;
       align-items: center;
     }
     .about-marquee {
-      margin-top: auto;
+      margin-top: 56px;
       width: calc(100% + 120px);   /* extrapola padding lateral 60+60 */
       margin-left: -60px;
       margin-right: -60px;
@@ -316,11 +316,10 @@
       line-height: 1.14;
       letter-spacing: -1px;
       margin-bottom: 24px;
-      white-space: nowrap;
     }
 
     .hero-title .blue {
-      color: #4B7EFF;
+      color: #fff;
     }
 
     .hero-subtitle {
@@ -641,7 +640,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
-      align-items: center;
+      align-items: stretch;
     }
 
     /* ---- Card de texto (esquerda) ---- */
@@ -650,6 +649,9 @@
       border-radius: 32px 32px 32px 90px;
       padding: 28px 32px;
       box-shadow: 0 30px 70px rgba(15, 30, 60, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .about-card h2 {
@@ -1279,6 +1281,7 @@
       font-weight: 700;
       font-size: 15px;
       flex-shrink: 0;
+      object-fit: contain;
     }
 
     .case-name {
@@ -1821,7 +1824,7 @@
 
   <div class="segments-grid">
     <div class="segment-card">
-      <div class="seg-image"><img src="card 01 e 06.jpg" alt="" /></div>
+      <div class="seg-image"><img src="energia.jpg" alt="" /></div>
       <div class="seg-body">
         <h3>Energia</h3>
         <p class="seg-desc">Controle de faixas de servidão, gestão de concessões da ANEEL e regularização fundiária de linhas de transmissão e geração. Parceiro de 77% das transmissoras do Brasil.</p>
@@ -1829,7 +1832,7 @@
     </div>
 
     <div class="segment-card">
-      <div class="seg-image"><img src="card 02 e 04.png" alt="" /></div>
+      <div class="seg-image"><img src="mineracao.jpg" alt="" /></div>
       <div class="seg-body">
         <h3>Mineração</h3>
         <p class="seg-desc">Regularização fundiária de áreas de mineração, controle de licenças socioambientais e gestão de servidões em empreendimentos de grande porte.</p>
@@ -1837,7 +1840,7 @@
     </div>
 
     <div class="segment-card">
-      <div class="seg-image"><img src="card 03 e 05.png" alt="" /></div>
+      <div class="seg-image"><img src="construcao.jpeg" alt="" /></div>
       <div class="seg-body">
         <h3>Construção &amp; Real Estate</h3>
         <p class="seg-desc">Do estudo fundiário à regularização de imóveis. Controle de distratos, gestão de passivos fundiários e conformidade cartorária integrada.</p>
@@ -1845,7 +1848,7 @@
     </div>
 
     <div class="segment-card">
-      <div class="seg-image"><img src="card 02 e 04.png" alt="" /></div>
+      <div class="seg-image"><img src="telecom.jpeg" alt="" /></div>
       <div class="seg-body">
         <h3>Telecom</h3>
         <p class="seg-desc">Gestão de passagens, faixas de duto e regularização fundiária de infraestrutura de rede. Controle georreferenciado de toda a malha.</p>
@@ -1853,7 +1856,7 @@
     </div>
 
     <div class="segment-card">
-      <div class="seg-image"><img src="card 03 e 05.png" alt="" /></div>
+      <div class="seg-image"><img src="governo-concessoes.jpeg" alt="" /></div>
       <div class="seg-body">
         <h3>Governo &amp; Concessões</h3>
         <p class="seg-desc">Governança regulatória e gestão fundiária em contratos de concessão pública. Transparência e rastreabilidade para órgãos de controle.</p>
@@ -1861,7 +1864,7 @@
     </div>
 
     <div class="segment-card">
-      <div class="seg-image"><img src="card 01 e 06.jpg" alt="" /></div>
+      <div class="seg-image"><img src="agronegocio.jpeg" alt="" /></div>
       <div class="seg-body">
         <h3>Agronegócio</h3>
         <p class="seg-desc">Contratos de arrendamento de terra, gestão de áreas produtivas e regularização fundiária rural com integração ao INCRA e SIGEF.</p>
@@ -1881,7 +1884,7 @@
 
   <div class="pillars-grid">
     <div class="pillar-card">
-      <div class="pillar-image"><img src="card 03 e 05.png" alt="" /></div>
+      <div class="pillar-image"><img src="conhecimento-de-mercado.png" alt="" /></div>
       <div class="pillar-body">
         <h3>Conhecimento de mercado</h3>
         <p>As soluções refletem a realidade operacional de cada setor — construímos processos específicos para energia, mineração, infraestrutura, agro, entre outros.</p>
@@ -1889,7 +1892,7 @@
     </div>
 
     <div class="pillar-card">
-      <div class="pillar-image"><img src="card 02 e 04.png" alt="" /></div>
+      <div class="pillar-image"><img src="solucoes-ciclo-de-vida.jpeg" alt="" /></div>
       <div class="pillar-body">
         <h3>Soluções para todo o ciclo de vida do empreendimento</h3>
         <p>Elaboração de estudos preliminares, implantação da solução e suporte especializado — do início ao fim do projeto.</p>
@@ -1897,7 +1900,7 @@
     </div>
 
     <div class="pillar-card">
-      <div class="pillar-image"><img src="card 01 e 06.jpg" alt="" /></div>
+      <div class="pillar-image"><img src="decisoes-precisas.jpg" alt="" /></div>
       <div class="pillar-body">
         <h3>Confiança para decisões precisas</h3>
         <p>Nosso sistema aumenta a transparência dos processos e proporciona rastreabilidade e conformidade total em cada etapa.</p>
@@ -2017,10 +2020,10 @@
   <div class="cases-grid">
     <!-- Depoimento Vale -->
     <div class="case-card">
-      <div class="case-image"><img src="card 01 e 06.jpg" alt="Vale S.A." /></div>
+      <div class="case-image"><img src="foto-vale.png" alt="Vale S.A." /></div>
       <div class="case-body">
         <div class="case-head">
-          <span class="case-logo" style="background:#0a8d7e;">V</span>
+          <img class="case-logo" src="clientes/vale-logo.svg" alt="Vale S.A." />
           <div>
             <div class="case-name">Vale S.A.</div>
             <div class="case-cat">Daniel Abood e Emília Carvalho</div>
@@ -2032,10 +2035,10 @@
 
     <!-- Depoimento TAG -->
     <div class="case-card">
-      <div class="case-image"><img src="card 02 e 04.png" alt="TAG" /></div>
+      <div class="case-image"><img src="tag-imagem.jpg" alt="TAG" /></div>
       <div class="case-body">
         <div class="case-head">
-          <span class="case-logo" style="background:#0f1d33;">T</span>
+          <img class="case-logo" src="clientes/tag-logo.jpg" alt="TAG" />
           <div>
             <div class="case-name">TAG</div>
             <div class="case-cat">Bruno Silva</div>
@@ -2047,10 +2050,10 @@
 
     <!-- Depoimento Echoenergia -->
     <div class="case-card">
-      <div class="case-image"><img src="card 03 e 05.png" alt="Echoenergia" /></div>
+      <div class="case-image"><img src="echoenergia-foto.webp" alt="Echoenergia" /></div>
       <div class="case-body">
         <div class="case-head">
-          <span class="case-logo" style="background:#e8622c;">E</span>
+          <img class="case-logo" src="clientes/logo-echoenergia.png" alt="Echoenergia" />
           <div>
             <div class="case-name">Echoenergia</div>
             <div class="case-cat">Wander Pires e Guilherme Avelar</div>
